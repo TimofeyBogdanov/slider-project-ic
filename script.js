@@ -85,7 +85,9 @@ function initSlider() {
         img.classList.add('animated');
         img.addEventListener('transitionend', () => {
             img.src = `images/slider-photo${num}.jpg`;
-            img.classList.remove('animated');
+            img.addEventListener('load', () => {
+                img.classList.remove('animated');
+            });
         });
     }
 
